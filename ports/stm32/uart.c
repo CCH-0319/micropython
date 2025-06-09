@@ -311,6 +311,7 @@ bool uart_init(machine_uart_obj_t *uart_obj,
             pins_pull[3] = MICROPY_HW_UART2_CTS_PULL;
             #endif
             __HAL_RCC_USART2_CLK_ENABLE();
+            __HAL_RCC_USART2_CLK_SLEEP_ENABLE();
             break;
         #endif
 
