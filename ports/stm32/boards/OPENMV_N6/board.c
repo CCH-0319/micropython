@@ -107,6 +107,13 @@ __attribute__((naked, noreturn, section(".ram_function"))) void ram_reset(void) 
 }
 
 void board_early_init(void) {
+    // TODO: if (HAL_PWREx_ConfigSupply(PWR_EXTERNAL_SOURCE_SUPPLY ) != HAL_OK)
+
+    LL_PWR_EnableWakeUpPin(LL_PWR_WAKEUP_PIN3 | LL_PWR_WAKEUP_PIN2);
+    LL_PWR_SetWakeUpPinPolarityLow(LL_PWR_WAKEUP_PIN3 | LL_PWR_WAKEUP_PIN2);
+}
+
+void board_enter_standby(void) {
     HAL_PWREx_EnableTCMRetention();
     HAL_PWREx_EnableTCMFLXRetention();
 
