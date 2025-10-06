@@ -51,7 +51,7 @@ void board_low_power(int mode);
 #define MICROPY_BOARD_ENTER_STANDBY board_low_power(2);
 
 // Note these are not used in top system.c.
-#define MICROPY_HW_CLK_PLLM         (3)     // 25/5=5 MHz
+#define MICROPY_HW_CLK_PLLM         (5)     // 25/5=5 MHz
 #define MICROPY_HW_CLK_PLLN         (192)   // 5*192=960 MHz (VCO)
 #define MICROPY_HW_CLK_PLLP         (2)     // 960/2=480 MHz SYSCLK
 #define MICROPY_HW_CLK_PLLQ         (20)    // 960/20=48 MHz (USB)
