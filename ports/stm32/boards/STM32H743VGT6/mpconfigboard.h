@@ -4,10 +4,10 @@
  * Copyright (C) 2013-2025 OpenMV, LLC.
  */
 
-#define MICROPY_HW_BOARD_NAME       "STM32H743VGT6"
+#define MICROPY_HW_BOARD_NAME       "CCH-VGT6"  //"OPENMV4P"
 #define MICROPY_HW_MCU_NAME         "STM32H743"
 #define MICROPY_PY_SYS_PLATFORM     "OpenMV4-H7"
-#define MICROPY_HW_FLASH_FS_LABEL   "OPENMV"
+#define MICROPY_HW_FLASH_FS_LABEL   "CCH USB"  //"OPENMV"
 
 // Network config
 #define MICROPY_PY_NETWORK_HOSTNAME_DEFAULT "mpy-openmv-4"
@@ -26,7 +26,7 @@ typedef unsigned int mp_uint_t;     // must be pointer size
 #define MICROPY_HW_ENABLE_SPI2      (1)
 #define MICROPY_HW_ENABLE_USB       (1)
 #define MICROPY_HW_HAS_FLASH        (1)
-#define MICROPY_HW_ENABLE_SERVO     (1)
+#define MICROPY_HW_ENABLE_SERVO     (0)  //(1)
 #define MICROPY_HW_ENABLE_TIMER     (1)
 #define MICROPY_HW_ENABLE_SDCARD    (1)
 #define MICROPY_HW_ENTER_BOOTLOADER_VIA_RESET   (0)
