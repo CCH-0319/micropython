@@ -42,18 +42,20 @@ extern void board_enter_bootloader(void);
 #define MICROPY_BOARD_ENTER_BOOTLOADER(nargs, args) board_enter_bootloader()
 
 // Note these are not used in top system.c.
-/*
+
 #define MICROPY_HW_CLK_PLLM         (3)     // 12/3=4 MHz
 #define MICROPY_HW_CLK_PLLN         (200)   // 4*200=800 MHz (VCO)
 #define MICROPY_HW_CLK_PLLP         (2)     // 800/2=400 MHz SYSCLK
 #define MICROPY_HW_CLK_PLLQ         (8)     // 800/8=100 MHz (USB)
 #define MICROPY_HW_CLK_PLLR         (2)     // 800/2=400 MHz
-*/
+
+/*
 #define MICROPY_HW_CLK_PLLM         (5)     // 25/5=5 MHz
 #define MICROPY_HW_CLK_PLLN         (192)   // 5*192=960 MHz (VCO)
 #define MICROPY_HW_CLK_PLLP         (2)     // 960/2=480 MHz SYSCLK
 #define MICROPY_HW_CLK_PLLQ         (20)    // 960/20=48 MHz (USB)
 #define MICROPY_HW_CLK_PLLR         (2)     // 960/2=480 MHz
+*/
 
 // UART1 config
 #define MICROPY_HW_UART1_TX  (pin_B14)
