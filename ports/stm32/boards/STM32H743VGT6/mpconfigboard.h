@@ -4,8 +4,8 @@
  * Copyright (C) 2013-2025 OpenMV, LLC.
  */
 
-#define MICROPY_HW_BOARD_NAME       "STM32H743VGT6"
-#define MICROPY_HW_MCU_NAME         "STM32H743"
+#define MICROPY_HW_BOARD_NAME       "CCH DEMO"
+#define MICROPY_HW_MCU_NAME         "STM32H743VGT6"
 #define MICROPY_PY_SYS_PLATFORM     "OpenMV4-H7"
 #define MICROPY_HW_FLASH_FS_LABEL   "CCH DEMO"
 
@@ -134,7 +134,7 @@ extern const struct _mp_obj_type_t mod_network_nic_type_winc;
 #define MICROPY_HW_USB_PID_CDC2_MSC_HID         (MICROPY_HW_USB_PID)
 #define MICROPY_HW_USB_PID_CDC3_MSC_HID         (MICROPY_HW_USB_PID)
 #define MICROPY_HW_USB_LANGID_STRING            0x409
-#define MICROPY_HW_USB_MANUFACTURER_STRING      "OpenMV"
+#define MICROPY_HW_USB_MANUFACTURER_STRING      "CCH"
 #define MICROPY_HW_USB_PRODUCT_FS_STRING        "OpenMV Virtual Comm Port in FS Mode"
 #define MICROPY_HW_USB_PRODUCT_HS_STRING        "OpenMV Virtual Comm Port in HS Mode"
 #define MICROPY_HW_USB_INTERFACE_FS_STRING      "VCP Interface"
