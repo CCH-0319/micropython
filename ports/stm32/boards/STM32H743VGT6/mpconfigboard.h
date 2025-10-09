@@ -41,6 +41,16 @@ typedef unsigned int mp_uint_t;     // must be pointer size
 extern void board_enter_bootloader(void);
 #define MICROPY_BOARD_ENTER_BOOTLOADER(nargs, args) board_enter_bootloader()
 
+// HSE = 25 MHz，給 MicroPython 子建置用
+#ifndef MICROPY_HW_HSE_VALUE
+#define MICROPY_HW_HSE_VALUE (25000000)
+#endif
+
+// 若你也用 HSE 作為時鐘來源，常見還會有：
+#ifndef MICROPY_HW_CLK_USE_HSE
+#define MICROPY_HW_CLK_USE_HSE (1)
+#endif
+
 // Note these are not used in top system.c.
 #define MICROPY_HW_CLK_PLLM         (5)     // 25/5=5 MHz
 #define MICROPY_HW_CLK_PLLN         (192)   // 5*192=960 MHz (VCO)
