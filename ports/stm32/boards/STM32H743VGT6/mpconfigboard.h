@@ -45,14 +45,14 @@ extern void board_enter_bootloader(void);
 #define MICROPY_HW_CLK_PLLM         (5)     // 25/5=5 MHz
 #define MICROPY_HW_CLK_PLLN         (192)   // 5*192=960 MHz (VCO)
 #define MICROPY_HW_CLK_PLLP         (2)     // 960/2=480 MHz SYSCLK
-#define MICROPY_HW_CLK_PLLQ         (4)    // 960/20=48 MHz (USB)
+#define MICROPY_HW_CLK_PLLQ         (4)     // 960/4=240 MHz (USB)
 #define MICROPY_HW_CLK_PLLR         (2)     // 960/2=480 MHz
-#define MICROPY_HW_CLK_PLLVCI       (RCC_PLL1VCIRANGE_1)
+#define MICROPY_HW_CLK_PLLVCI       (RCC_PLL1VCIRANGE_2)
 #define MICROPY_HW_CLK_PLLVCO       (RCC_PLL1VCOWIDE)
 #define MICROPY_HW_CLK_PLLFRAC      (0)
 
 // UART1 config
-#define MICROPY_HW_UART1_TX  (pin_A9)  //(pin_B14)
+#define MICROPY_HW_UART1_TX  (pin_A9)   //(pin_B14)
 #define MICROPY_HW_UART1_RX  (pin_A10)  //(pin_B15)
 
 // UART3 config
@@ -130,8 +130,8 @@ extern const struct _mp_obj_type_t mod_network_nic_type_winc;
 #define MICROPY_HW_USB_PID_CDC3_MSC_HID         (MICROPY_HW_USB_PID)
 #define MICROPY_HW_USB_LANGID_STRING            0x409
 #define MICROPY_HW_USB_MANUFACTURER_STRING      "CC"  //"OpenMV"
-#define MICROPY_HW_USB_PRODUCT_FS_STRING        "CC Virtual Comm Port in FS Mode"  //"OpenMV Virtual Comm Port in FS Mode"
-#define MICROPY_HW_USB_PRODUCT_HS_STRING        "CC Virtual Comm Port in HS Mode"  //"OpenMV Virtual Comm Port in HS Mode"
+#define MICROPY_HW_USB_PRODUCT_FS_STRING        "CCH Virtual Comm Port in FS Mode"  //"OpenMV Virtual Comm Port in FS Mode"
+#define MICROPY_HW_USB_PRODUCT_HS_STRING        "CCH Virtual Comm Port in HS Mode"  //"OpenMV Virtual Comm Port in HS Mode"
 #define MICROPY_HW_USB_INTERFACE_FS_STRING      "VCP Interface"
 #define MICROPY_HW_USB_INTERFACE_HS_STRING      "VCP Interface"
 #define MICROPY_HW_USB_CONFIGURATION_FS_STRING  "VCP Config"
