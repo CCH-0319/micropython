@@ -49,8 +49,8 @@ extern void board_enter_bootloader(void);
 #define MICROPY_HW_CLK_PLLR         (2)     // 960/2=480 MHz
 
 // UART1 config
-#define MICROPY_HW_UART1_TX  (pin_B14)
-#define MICROPY_HW_UART1_RX  (pin_B15)
+#define MICROPY_HW_UART1_TX  (pin_A9)  //(pin_B14)
+#define MICROPY_HW_UART1_RX  (pin_A10)  //(pin_B15)
 
 // UART3 config
 #define MICROPY_HW_UART3_TX  (pin_B10)
