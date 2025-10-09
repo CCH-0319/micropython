@@ -45,8 +45,11 @@ extern void board_enter_bootloader(void);
 #define MICROPY_HW_CLK_PLLM         (5)     // 25/5=5 MHz
 #define MICROPY_HW_CLK_PLLN         (192)   // 5*192=960 MHz (VCO)
 #define MICROPY_HW_CLK_PLLP         (2)     // 960/2=480 MHz SYSCLK
-#define MICROPY_HW_CLK_PLLQ         (20)    // 960/20=48 MHz (USB)
+#define MICROPY_HW_CLK_PLLQ         (4)    // 960/20=48 MHz (USB)
 #define MICROPY_HW_CLK_PLLR         (2)     // 960/2=480 MHz
+#define MICROPY_HW_CLK_PLLVCI       (RCC_PLL1VCIRANGE_1)
+#define MICROPY_HW_CLK_PLLVCO       (RCC_PLL1VCOWIDE)
+#define MICROPY_HW_CLK_PLLFRAC      (0)
 
 // UART1 config
 #define MICROPY_HW_UART1_TX  (pin_A9)  //(pin_B14)
