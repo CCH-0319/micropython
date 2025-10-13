@@ -51,6 +51,24 @@ extern void board_enter_bootloader(void);
 #define MICROPY_HW_CLK_PLLVCO       (RCC_PLL1VCOWIDE)
 #define MICROPY_HW_CLK_PLLFRAC      (0)
 
+// I2C buses
+#define MICROPY_HW_I2C1_SCL (pin_B8)
+#define MICROPY_HW_I2C1_SDA (pin_B9)
+
+#define MICROPY_HW_I2C2_SCL (pin_B10)
+#define MICROPY_HW_I2C2_SDA (pin_B11)
+
+// SPI buses
+#define MICROPY_HW_SPI3_SCK  (pin_B3)
+#define MICROPY_HW_SPI3_MISO (pin_B4)
+#define MICROPY_HW_SPI3_MOSI (pin_B5)
+#define MICROPY_HW_SPI3_NSS  (pin_A15)
+
+#define MICROPY_HW_SPI4_SCK  (pin_E12)
+#define MICROPY_HW_SPI4_MISO (pin_E13)
+#define MICROPY_HW_SPI4_MOSI (pin_E14)
+#define MICROPY_HW_SPI4_NSS  (pin_E11)
+
 // UART config
 #define MICROPY_HW_UART1_TX  (pin_A9)
 #define MICROPY_HW_UART1_RX  (pin_A10)
@@ -61,28 +79,10 @@ extern void board_enter_bootloader(void);
 #define MICROPY_HW_UART3_TX  (pin_D8)
 #define MICROPY_HW_UART3_RX  (pin_D9)
 
-// I2C buses
-#define MICROPY_HW_I2C1_SCL (pin_B8)
-#define MICROPY_HW_I2C1_SDA (pin_B9)
-
-#define MICROPY_HW_I2C2_SCL (pin_B10)
-#define MICROPY_HW_I2C2_SDA (pin_B11)
-
-// SPI buses
-#define MICROPY_HW_SPI3_NSS  (pin_A15)
-#define MICROPY_HW_SPI3_SCK  (pin_B3)
-#define MICROPY_HW_SPI3_MISO (pin_B4)
-#define MICROPY_HW_SPI3_MOSI (pin_D6)
-
-#define MICROPY_HW_SPI4_NSS  (pin_E11)
-#define MICROPY_HW_SPI4_SCK  (pin_E12)
-#define MICROPY_HW_SPI4_MISO (pin_E13)
-#define MICROPY_HW_SPI4_MOSI (pin_E14)
-
 // FDCAN bus
 #define MICROPY_HW_CAN2_NAME "FDCAN2"
-#define MICROPY_HW_CAN2_TX   (pin_B13)
 #define MICROPY_HW_CAN2_RX   (pin_B12)
+#define MICROPY_HW_CAN2_TX   (pin_B13)
 #define MICROPY_HW_CAN_IS_RESERVED(id) (id != PYB_CAN_2)
 
 // SD card detect switch
