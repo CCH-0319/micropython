@@ -86,7 +86,7 @@ extern void board_enter_bootloader(void);
 #define MICROPY_HW_CAN_IS_RESERVED(id) (id != PYB_CAN_2)
 
 // SD card detect switch
-#define MICROPY_HW_SDCARD_DETECT_PIN        (pin_C0)
+//#define MICROPY_HW_SDCARD_DETECT_PIN        (pin_C0)
 #define MICROPY_HW_SDCARD_DETECT_PULL       (GPIO_PULLUP)
 #define MICROPY_HW_SDCARD_DETECT_PRESENT    (GPIO_PIN_RESET)
 
