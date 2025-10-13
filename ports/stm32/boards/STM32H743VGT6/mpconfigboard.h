@@ -4,7 +4,7 @@
  * Copyright (C) 2013-2025 OpenMV, LLC.
  */
 
-#define MICROPY_HW_BOARD_NAME       "CCH-VGT6"  //"OPENMV4P"
+#define MICROPY_HW_BOARD_NAME       "CCH-VGT6"
 #define MICROPY_HW_MCU_NAME         "STM32H743"
 #define MICROPY_PY_SYS_PLATFORM     "OpenMV4-H7"
 #define MICROPY_HW_FLASH_FS_LABEL   "CCH USB"  //"OPENMV"
@@ -26,7 +26,7 @@ typedef unsigned int mp_uint_t;     // must be pointer size
 #define MICROPY_HW_ENABLE_SPI2      (1)
 #define MICROPY_HW_ENABLE_USB       (1)
 #define MICROPY_HW_HAS_FLASH        (1)
-#define MICROPY_HW_ENABLE_SERVO     (0)  //(1)
+#define MICROPY_HW_ENABLE_SERVO     (1)
 #define MICROPY_HW_ENABLE_TIMER     (1)
 #define MICROPY_HW_ENABLE_SDCARD    (1)
 #define MICROPY_HW_ENTER_BOOTLOADER_VIA_RESET   (0)
@@ -45,23 +45,28 @@ extern void board_enter_bootloader(void);
 #define MICROPY_HW_CLK_PLLM         (5)     // 25/5=5 MHz
 #define MICROPY_HW_CLK_PLLN         (192)   // 5*192=960 MHz (VCO)
 #define MICROPY_HW_CLK_PLLP         (2)     // 960/2=480 MHz SYSCLK
-#define MICROPY_HW_CLK_PLLQ         (4)     // 960/4=240 MHz (USB)
+#define MICROPY_HW_CLK_PLLQ         (20)    // 960/20=48 MHz (USB)
 #define MICROPY_HW_CLK_PLLR         (2)     // 960/2=480 MHz
 #define MICROPY_HW_CLK_PLLVCI       (RCC_PLL1VCIRANGE_2)
 #define MICROPY_HW_CLK_PLLVCO       (RCC_PLL1VCOWIDE)
 #define MICROPY_HW_CLK_PLLFRAC      (0)
 
-// UART1 config
-#define MICROPY_HW_UART1_TX  (pin_A9)   //(pin_B14)
-#define MICROPY_HW_UART1_RX  (pin_A10)  //(pin_B15)
+// UART config
+#define MICROPY_HW_UART1_TX  (pin_A9)
+#define MICROPY_HW_UART1_RX  (pin_A10)
 
-// UART3 config
-#define MICROPY_HW_UART3_TX  (pin_B10)
-#define MICROPY_HW_UART3_RX  (pin_B11)
-#define MICROPY_HW_UART3_RTS (pin_B14)
-#define MICROPY_HW_UART3_CTS (pin_B13)
+#define MICROPY_HW_UART2_TX  (pin_A2)
+#define MICROPY_HW_UART2_RX  (pin_A3)
+
+#define MICROPY_HW_UART3_TX  (pin_D8)
+#define MICROPY_HW_UART3_RX  (pin_D9)
+//#define MICROPY_HW_UART3_RTS (pin_B14)
+//#define MICROPY_HW_UART3_CTS (pin_B13)
 
 // I2C buses
+#define MICROPY_HW_I2C1_SCL (pin_B8)
+#define MICROPY_HW_I2C1_SDA (pin_B9)
+
 #define MICROPY_HW_I2C2_SCL (pin_B10)
 #define MICROPY_HW_I2C2_SDA (pin_B11)
 
@@ -69,10 +74,15 @@ extern void board_enter_bootloader(void);
 #define MICROPY_HW_I2C4_SDA (pin_D13)
 
 // SPI buses
-#define MICROPY_HW_SPI2_NSS  (pin_B12)
-#define MICROPY_HW_SPI2_SCK  (pin_B13)
-#define MICROPY_HW_SPI2_MISO (pin_B14)
-#define MICROPY_HW_SPI2_MOSI (pin_B15)
+#define MICROPY_HW_SPI3_NSS  (pin_A4)
+#define MICROPY_HW_SPI3_SCK  (pin_B3)
+#define MICROPY_HW_SPI3_MISO (pin_B4)
+#define MICROPY_HW_SPI3_MOSI (pin_D6)
+
+#define MICROPY_HW_SPI4_NSS  (pin_E11)
+#define MICROPY_HW_SPI4_SCK  (pin_E12)
+#define MICROPY_HW_SPI4_MISO (pin_E13)
+#define MICROPY_HW_SPI4_MOSI (pin_E14)
 
 // FDCAN bus
 #define MICROPY_HW_CAN2_NAME "FDCAN2"
@@ -81,7 +91,7 @@ extern void board_enter_bootloader(void);
 #define MICROPY_HW_CAN_IS_RESERVED(id) (id != PYB_CAN_2)
 
 // SD card detect switch
-#define MICROPY_HW_SDCARD_DETECT_PIN        (pin_D0)
+#define MICROPY_HW_SDCARD_DETECT_PIN        (pin_C0)
 #define MICROPY_HW_SDCARD_DETECT_PULL       (GPIO_PULLUP)
 #define MICROPY_HW_SDCARD_DETECT_PRESENT    (GPIO_PIN_RESET)
 
@@ -89,13 +99,13 @@ extern void board_enter_bootloader(void);
 #define MICROPY_HW_USB_FS                   (1)
 #define MICROPY_HW_USB_CDC_RX_DATA_SIZE     (512)
 #define MICROPY_HW_USB_CDC_TX_DATA_SIZE     (512)
-#define MICROPY_HW_USB_VBUS_DETECT_PIN      (pin_A9)
+//#define MICROPY_HW_USB_VBUS_DETECT_PIN      (pin_A9)
 
 // LEDs
-#define MICROPY_HW_LED1             (pin_C0) // red
-#define MICROPY_HW_LED2             (pin_C1) // green
-#define MICROPY_HW_LED3             (pin_C2) // blue
-#define MICROPY_HW_LED4             (pin_E2) // IR
+#define MICROPY_HW_LED1             (pin_E7) // red
+#define MICROPY_HW_LED2             (pin_E8) // green
+#define MICROPY_HW_LED3             (pin_C13) // blue
+#define MICROPY_HW_LED4             (pin_E9) // IR
 #define MICROPY_HW_LED_OTYPE        (GPIO_MODE_OUTPUT_PP)
 // NOTE: LEDs are active low.
 #define MICROPY_HW_LED_ON(pin)      (pin->gpio->BSRR = (pin->pin_mask << 16))
