@@ -7,7 +7,7 @@
 #define MICROPY_HW_BOARD_NAME       "CCH-VGT6"
 #define MICROPY_HW_MCU_NAME         "STM32H743"
 #define MICROPY_PY_SYS_PLATFORM     "OpenMV4-H7"
-#define MICROPY_HW_FLASH_FS_LABEL   "CCH USB"  //"OPENMV"
+#define MICROPY_HW_FLASH_FS_LABEL   "CCH USB"
 
 // Network config
 #define MICROPY_PY_NETWORK_HOSTNAME_DEFAULT "mpy-openmv-4"
@@ -60,8 +60,6 @@ extern void board_enter_bootloader(void);
 
 #define MICROPY_HW_UART3_TX  (pin_D8)
 #define MICROPY_HW_UART3_RX  (pin_D9)
-//#define MICROPY_HW_UART3_RTS (pin_B14)
-//#define MICROPY_HW_UART3_CTS (pin_B13)
 
 // I2C buses
 #define MICROPY_HW_I2C1_SCL (pin_B8)
@@ -70,11 +68,8 @@ extern void board_enter_bootloader(void);
 #define MICROPY_HW_I2C2_SCL (pin_B10)
 #define MICROPY_HW_I2C2_SDA (pin_B11)
 
-#define MICROPY_HW_I2C4_SCL (pin_D12)
-#define MICROPY_HW_I2C4_SDA (pin_D13)
-
 // SPI buses
-#define MICROPY_HW_SPI3_NSS  (pin_A4)
+#define MICROPY_HW_SPI3_NSS  (pin_A15)
 #define MICROPY_HW_SPI3_SCK  (pin_B3)
 #define MICROPY_HW_SPI3_MISO (pin_B4)
 #define MICROPY_HW_SPI3_MOSI (pin_D6)
