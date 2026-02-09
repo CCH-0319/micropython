@@ -7,7 +7,7 @@
 #define MICROPY_HW_BOARD_NAME       "CCH-VIT6"
 #define MICROPY_HW_MCU_NAME         "STM32H743"
 #define MICROPY_PY_SYS_PLATFORM     "OpenMV4-H7"
-#define MICROPY_HW_FLASH_FS_LABEL   "CCH USB"
+#define MICROPY_HW_FLASH_FS_LABEL   "CCH"
 
 // Network config
 #define MICROPY_PY_NETWORK_HOSTNAME_DEFAULT "mpy-openmv-4"
@@ -86,7 +86,7 @@ extern void board_enter_bootloader(void);
 #define MICROPY_HW_CAN_IS_RESERVED(id) (id != PYB_CAN_2)
 
 // SD card detect switch
-#define MICROPY_HW_SDCARD_DETECT_PIN        (pin_D11)
+#define MICROPY_HW_SDCARD_DETECT_PIN        (pin_B15)
 #define MICROPY_HW_SDCARD_DETECT_PULL       (GPIO_PULLUP)
 #define MICROPY_HW_SDCARD_DETECT_PRESENT    (GPIO_PIN_RESET)
 
@@ -134,7 +134,7 @@ extern const struct _mp_obj_type_t mod_network_nic_type_winc;
 #define MICROPY_HW_USB_PID_CDC2_MSC_HID         (MICROPY_HW_USB_PID)
 #define MICROPY_HW_USB_PID_CDC3_MSC_HID         (MICROPY_HW_USB_PID)
 #define MICROPY_HW_USB_LANGID_STRING            0x409
-#define MICROPY_HW_USB_MANUFACTURER_STRING      "CC"  //"OpenMV"
+#define MICROPY_HW_USB_MANUFACTURER_STRING      "CCH"  //"OpenMV"
 #define MICROPY_HW_USB_PRODUCT_FS_STRING        "CCH Virtual Comm Port in FS Mode"  //"OpenMV Virtual Comm Port in FS Mode"
 #define MICROPY_HW_USB_PRODUCT_HS_STRING        "CCH Virtual Comm Port in HS Mode"  //"OpenMV Virtual Comm Port in HS Mode"
 #define MICROPY_HW_USB_INTERFACE_FS_STRING      "VCP Interface"
